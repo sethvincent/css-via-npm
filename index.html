@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Foo</title>
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<style type='text/css'>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs,
+.hljs-tag,
+.css .hljs-rules,
+.css .hljs-value,
+.css .hljs-function
+.hljs-preprocessor,
+.hljs-pragma {
+  color: #f8f8f2;
+}
+
+.hljs-strongemphasis,
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-blockquote,
+.hljs-horizontal_rule,
+.hljs-number,
+.hljs-regexp,
+.alias .hljs-keyword,
+.hljs-literal,
+.hljs-hexcolor {
+  color: #ae81ff;
+}
+
+.hljs-tag .hljs-value,
+.hljs-code,
+.hljs-title,
+.css .hljs-class,
+.hljs-class .hljs-title:last-child {
+  color: #a6e22e;
+}
+
+.hljs-link_url {
+  font-size: 80%;
+}
+
+.hljs-strong,
+.hljs-strongemphasis {
+  font-weight: bold;
+}
+
+.hljs-emphasis,
+.hljs-strongemphasis,
+.hljs-class .hljs-title:last-child {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-function,
+.hljs-change,
+.hljs-winutils,
+.hljs-flow,
+.nginx .hljs-title,
+.tex .hljs-special,
+.hljs-header,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.hljs-tag .hljs-title,
+.hljs-value,
+.alias .hljs-keyword:first-child,
+.css .hljs-tag,
+.css .unit,
+.css .hljs-important {
+  color: #f92672;
+}
+
+.hljs-function .hljs-keyword,
+.hljs-class .hljs-keyword:first-child,
+.hljs-constant,
+.css .hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.css .hljs-id,
+.hljs-subst,
+.hljs-type,
+.ruby .hljs-class .hljs-parent,
+.hljs-built_in,
+.django .hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.django .hljs-filter .hljs-argument,
+.smalltalk .hljs-localvars,
+.smalltalk .hljs-array,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-addition,
+.hljs-stream,
+.hljs-envvar,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.hljs-prompt,
+.hljs-link_label,
+.hljs-link_url {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-javadoc,
+.hljs-annotation,
+.hljs-decorator,
+.hljs-template_comment,
+.hljs-pi,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.tex .hljs-formula {
+  color: #75715e;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata,
+.xml .php,
+.php .xml {
+  opacity: 0.5;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Helvetica';
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+ul {
+  margin-left: 50px;
+}
+
+pre, code {
+  font-family: Monaco, monospace;
+  font-weight: 300;
+}
+
+code {
+  background: yellow;
+  color:#000;
+}
+
+pre code {
+  background-color: inherit;
+}
+</style>
+<script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0, ti;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n], t;
+        document.body.className = e.dataset.bodyclass || '';
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'block';
+        e.style.fontSize = i + 'px';
+        e.style.padding = '50px';
+        if (e.firstChild && e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+            if ('classList' in e) e.classList.add('imageText');
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        if (ti !== undefined) window.clearInterval(ti);
+        t = parseInt(e.dataset.timeToNext || 0, 10);
+        if (t > 0) ti = window.setTimeout(fwd, (t * 1000));
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 2) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() { go(++cur % (s.length)); };
+    function fwd() { go(Math.min(s.length - 1, ++cur)); }
+    function rev() { go(Math.max(0, --cur)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
+        if (e.which === 37 || e.which === 33 || e.which === 38) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+    go(cur);
+};
+</script>
+</head>
+<body>
+<div><h1 id="css-via-npm">css via npm</h1>
+<p><a href="http://twitter.com/sethdvincent" style="font-size:50%">@sethdvincent</a></p>
+</div>
+<div><h2 id="npm-is-great-for-js-">npm is great for js.</h2>
+</div>
+<div><h2 id="hey-it-s-great-for-css-too-">hey, it&#39;s great for css, too.</h2>
+</div>
+<div><h2 id="simple-workflow">simple workflow</h2>
+<ul>
+<li><code>npm install cool-css-package</code></li>
+<li><code>@import &quot;cool-css-package&quot;;</code> in main CSS file.</li>
+<li><code>npm run bundle-css</code></li>
+</ul>
+</div>
+<div><h2 id="bootstrap-sure-">bootstrap? sure.</h2>
+<ul>
+<li><code>npm install --save bootstrap</code></li>
+<li><code>@import &quot;bootstrap&quot;;</code></li>
+<li><code>npm run bundle-css</code></li>
+</ul>
+</div>
+<div><h2 id="hey-what-s-that-bundle-css-command-">hey, what&#39;s that <code>bundle-css</code> command?</h2>
+</div>
+<div><h2 id="there-are-a-few-command-line-tools-for-bundling-css-that-s-distributed-on-npm-">There are a few command-line tools for bundling css that&#39;s distributed on npm.</h2>
+<ul>
+<li><a href="http://npmjs.org/sheetify">sheetify</a></li>
+<li><a href="http://npmjs.org/rework-npm">rework-npm</a></li>
+<li><a href="http://npmjs.org/parcelify">parcelify</a></li>
+</ul>
+</div>
+<div><h2 id="example-bundle-css-script">example bundle-css script</h2>
+<pre><code class="lang-json">&quot;scripts&quot;: {
+  &quot;bundle-css&quot;:  &quot;sheetify style.css &gt; bundle.css&quot;
+}
+</code></pre>
+</div>
+<div><h2 id="modular-css">modular css</h2>
+</div>
+<div><h2 id="hi-i-d-like-some-button-styles-please-">hi i&#39;d like some button styles please.</h2>
+</div>
+<div><h2 id="modular-css-projects">modular css projects</h2>
+<ul>
+<li><a href="npmjs.org/basscss">basscss</a></li>
+<li><a href="npmjs.org/tachyons">tachyons</a></li>
+<li><a href="npmjs.org/suitcss">suitcss</a></li>
+<li><a href="npmjs.org/topcoat">topcoat</a></li>
+<li><a href="npmjs.org/csskit">csskit</a></li>
+</ul>
+</div>
+<div><h2 id="preprocessors-">preprocessors?</h2>
+</div>
+<div><h2 id="yes-">yes.</h2>
+</div>
+<div><h2 id="css4">CSS4</h2>
+<ul>
+<li><a href="http://npmjs.org/cssnext">cssnext</a></li>
+<li><a href="http://npmjs.org/rework">rework</a></li>
+<li><a href="http://npmjs.org/postcss">postcss</a></li>
+</ul>
+</div>
+<div><h2 id="example-bundle-css-script-with-cssnext">example bundle-css script with cssnext</h2>
+<pre><code class="lang-json">&quot;scripts&quot;: {
+  &quot;bundle-css&quot;:  &quot;sheetify style.css | cssnext &gt; bundle.css&quot;
+}
+</code></pre>
+</div>
+<div><h2 id="publishing-css-modules">publishing css modules</h2>
+<ul>
+<li>package.json <code>style</code> property</li>
+<li>publish preprocessed file in <code>style</code> property</li>
+<li>offer source files as option.</li>
+</ul>
+</div>
+<div><h2 id="scss-example-">scss example:</h2>
+<pre><code class="lang-css">@import &quot;example/source.scss&quot;;
+</code></pre>
+</div>
+<div><h2 id="css4-example-">css4 example:</h2>
+<pre><code class="lang-css">@import &quot;example/style-css4.css&quot;;
+</code></pre>
+</div>
+<div><h2 id="include-local-css-files-in-a-bundle-by-using-a-relative-path">include local css files in a bundle by using a relative path</h2>
+<pre><code class="lang-css">@import &quot;./example.css&quot;;
+</code></pre>
+</div>
+<div><h2 id="detailed-example">detailed example</h2>
+<p>how do i use this?</p>
+</div>
+<div><h2 id="css-dependencies">css dependencies</h2>
+<pre><code class="lang-bash">npm i --save normalize.css basscss-grid csskit
+</code></pre>
+</div>
+<div><h2 id="dev-dependencies">dev dependencies</h2>
+<pre><code class="lang-bash">npm i --save-dev sheetify cssnext
+</code></pre>
+</div>
+<div><h2 id="files-">files:</h2>
+<ul>
+<li>css/<ul>
+<li>index.css</li>
+<li>fonts.css</li>
+<li>layout.css</li>
+<li>forms.css</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><h2 id="index-css">index.css</h2>
+<pre><code class="lang-css">@import &quot;normalize.css&quot;;
+@import &quot;basscss-grid&quot;;
+@import &quot;csskit&quot;;
+
+@import &quot;./fonts.css&quot;;
+@import &quot;./layout.css&quot;;
+/* etc. */
+</code></pre>
+</div>
+<div><h2 id="bundle-css-script">bundle-css script</h2>
+<pre><code class="lang-json">&quot;scripts&quot;: {
+  &quot;bundle-css&quot;:  &quot;sheetify css/index.css | cssnext &gt; public/bundle.css&quot;
+}
+</code></pre>
+</div>
+<div><h2 id="thanks-">thanks!</h2>
+<p><a href="http://twitter.com/sethdvincent" style="font-size:50%">@sethdvincent</a></p>
+</div>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
