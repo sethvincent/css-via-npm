@@ -1,6 +1,8 @@
 # css via npm
 
 <a href="http://twitter.com/sethdvincent" style="font-size:50%">@sethdvincent</a>
+<a href="http://sethvincent.com/css-via-npm" style="font-size:50%">sethvincent.com/css-via-npm</a>
+
 
 ---
 
@@ -186,3 +188,4 @@ npm i --save-dev sheetify cssnext
 ## thanks!
 
 <a href="http://twitter.com/sethdvincent" style="font-size:50%">@sethdvincent</a>
+<a href="http://sethvincent.com/css-via-npm" style="font-size:50%">sethvincent.com/css-via-npm</a>
