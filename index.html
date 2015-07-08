@@ -227,9 +227,14 @@ window.onload = function() {
         e.style.display = 'block';
         e.style.fontSize = i + 'px';
         e.style.padding = '50px';
-        if (e.firstChild && e.firstChild.nodeName === 'IMG') {
-            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
-            e.firstChild.style.display = 'none';
+        if (e.firstChild && e.firstChild.nodeName === 'IMG') var img = e.firstChild
+        if (e.firstChild.firstChild && e.firstChild.firstChild.nodeName === 'IMG') var img = e.firstChild.firstChild
+        if (img) {
+            document.body.style.backgroundImage = 'url(' + img.src + ')';
+            document.body.style.width = '100%'
+            document.body.style.height = '100%'
+            document.body.style.backgroundSize = 'cover'
+            img.style.display = 'none';
             if ('classList' in e) e.classList.add('imageText');
         } else {
             document.body.style.backgroundImage = '';
@@ -284,30 +289,35 @@ window.onload = function() {
 </div>
 <div><h2 id="npm-is-great-for-js-">npm is great for js.</h2>
 </div>
-<div><h2 id="hey-it-s-great-for-css-too-">hey, it&#39;s great for css, too.</h2>
+<div><h2 id="it-s-great-for-css-too-">it&#39;s great for css, too.</h2>
 </div>
 <div><h2 id="simple-workflow">simple workflow</h2>
 <ul>
-<li><code>npm install cool-css-package</code></li>
-<li><code>@import &quot;cool-css-package&quot;;</code> in main CSS file.</li>
+<li><code>npm i --save cool-css</code></li>
+<li><code>@import &quot;cool-css&quot;;</code></li>
 <li><code>npm run bundle-css</code></li>
 </ul>
 </div>
 <div><h2 id="bootstrap-sure-">bootstrap? sure.</h2>
 <ul>
-<li><code>npm install --save bootstrap</code></li>
+<li><code>npm i --save bootstrap</code></li>
 <li><code>@import &quot;bootstrap&quot;;</code></li>
 <li><code>npm run bundle-css</code></li>
 </ul>
 </div>
 <div><h2 id="hey-what-s-that-bundle-css-command-">hey, what&#39;s that <code>bundle-css</code> command?</h2>
 </div>
-<div><h2 id="there-are-a-few-command-line-tools-for-bundling-css-that-s-distributed-on-npm-">There are a few command-line tools for bundling css that&#39;s distributed on npm.</h2>
+<div><h2 id="there-are-a-few-tools-for-bundling-css-">There are a few tools for bundling css.</h2>
 <ul>
 <li><a href="http://npmjs.org/sheetify">sheetify</a></li>
 <li><a href="http://npmjs.org/rework-npm">rework-npm</a></li>
 <li><a href="http://npmjs.org/parcelify">parcelify</a></li>
 </ul>
+</div>
+<div><pre><code class="lang-json">{
+  &quot;style&quot;: &quot;style.css&quot;,
+}
+</code></pre>
 </div>
 <div><h2 id="example-bundle-css-script">example bundle-css script</h2>
 <pre><code class="lang-json">&quot;scripts&quot;: {
@@ -330,9 +340,9 @@ window.onload = function() {
 </div>
 <div><h2 id="preprocessors-">preprocessors?</h2>
 </div>
-<div><h2 id="yes-">yes.</h2>
+<div><h2 id="ok-">ok.</h2>
 </div>
-<div><h2 id="css4">CSS4</h2>
+<div><h2 id="css-tomorrow-yesterday">css tomorrow yesterday</h2>
 <ul>
 <li><a href="http://npmjs.org/cssnext">cssnext</a></li>
 <li><a href="http://npmjs.org/rework">rework</a></li>
@@ -356,15 +366,11 @@ window.onload = function() {
 <pre><code class="lang-css">@import &quot;example/source.scss&quot;;
 </code></pre>
 </div>
-<div><h2 id="css4-example-">css4 example:</h2>
-<pre><code class="lang-css">@import &quot;example/style-css4.css&quot;;
-</code></pre>
-</div>
 <div><h2 id="include-local-css-files-in-a-bundle-by-using-a-relative-path">include local css files in a bundle by using a relative path</h2>
 <pre><code class="lang-css">@import &quot;./example.css&quot;;
 </code></pre>
 </div>
-<div><h2 id="detailed-example">detailed example</h2>
+<div><h2 id="usage-example">usage example</h2>
 <p>how do i use this?</p>
 </div>
 <div><h2 id="css-dependencies">css dependencies</h2>
@@ -403,7 +409,19 @@ window.onload = function() {
 }
 </code></pre>
 </div>
-<div><h2 id="thanks-">thanks!</h2>
+<div><h2 id="toy-module-example">toy module example</h2>
+</div>
+<div><ul>
+<li><code>npm i -S pizza-background</code></li>
+<li><code>@import &quot;pizza-background&quot;;</code></li>
+<li><code>npm run bundle-css</code></li>
+<li>add bundled css script tag</li>
+<li><code>&lt;body class=&quot;pizza&quot;&gt;&lt;/body&gt;</code></li>
+</ul>
+</div>
+<div><p><img src="pizza.gif" alt="pizza.gif"></p>
+</div>
+<div><h2 id="now-you-publish-a-css-module-">now you publish a css module!</h2>
 <p><a href="http://twitter.com/sethdvincent" style="font-size:50%">@sethdvincent</a>
 <a href="http://sethvincent.com/css-via-npm" style="font-size:50%">sethvincent.com/css-via-npm</a></p>
 </div>

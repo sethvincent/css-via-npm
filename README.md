@@ -10,21 +10,21 @@
 
 ---
 
-## hey, it's great for css, too.
+## it's great for css, too.
 
 ---
 
 ## simple workflow
 
-- `npm install cool-css-package`
-- `@import "cool-css-package";` in main CSS file.
+- `npm i --save cool-css`
+- `@import "cool-css";`
 - `npm run bundle-css`
 
 ---
 
 ## bootstrap? sure.
 
-- `npm install --save bootstrap`
+- `npm i --save bootstrap`
 - `@import "bootstrap";`
 - `npm run bundle-css`
 
@@ -34,12 +34,19 @@
 
 ---
 
-## There are a few command-line tools for bundling css that's distributed on npm.
+## There are a few tools for bundling css.
 
 - [sheetify](http://npmjs.org/sheetify)
 - [rework-npm](http://npmjs.org/rework-npm)
 - [parcelify](http://npmjs.org/parcelify)
 
+---
+
+```json
+{
+  "style": "style.css",
+}
+```
 ---
 
 ## example bundle-css script
@@ -74,11 +81,11 @@
 
 ---
 
-## yes.
+## ok.
 
 ---
 
-## CSS4
+## css tomorrow yesterday
 
 - [cssnext](http://npmjs.org/cssnext)
 - [rework](http://npmjs.org/rework)
@@ -112,13 +119,6 @@
 
 ---
 
-## css4 example:
-
-```css
-@import "example/style-css4.css";
-```
-
----
 
 ## include local css files in a bundle by using a relative path
 
@@ -128,7 +128,7 @@
 
 ---
 
-## detailed example
+## usage example
 
 how do i use this?
 
@@ -185,7 +185,21 @@ npm i --save-dev sheetify cssnext
 
 ---
 
-## thanks!
+## toy module example
+
+---
+
+- `npm i -S pizza-background`
+- `@import "pizza-background";`
+- `npm run bundle-css`
+- add bundled css script tag
+- `<body class="pizza"></body>`
+
+---
+<img src="pizza.gif" alt="pizza.gif">
+---
+
+## now you publish a css module!
 
 <a href="http://twitter.com/sethdvincent" style="font-size:50%">@sethdvincent</a>
 <a href="http://sethvincent.com/css-via-npm" style="font-size:50%">sethvincent.com/css-via-npm</a>
