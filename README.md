@@ -185,7 +185,7 @@ npm i --save-dev sheetify cssnext
 
 ---
 
-## toy module example
+## module example
 
 ---
 
