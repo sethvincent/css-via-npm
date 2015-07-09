@@ -69,11 +69,11 @@
 
 ## modular css projects
 
-- [basscss](npmjs.org/basscss)
-- [tachyons](npmjs.org/tachyons)
-- [suitcss](npmjs.org/suitcss)
-- [topcoat](npmjs.org/topcoat)
-- [csskit](npmjs.org/csskit)
+- [basscss](http://npmjs.org/basscss)
+- [tachyons](http://npmjs.org/tachyons)
+- [suitcss](http://npmjs.org/suitcss)
+- [topcoat](http://npmjs.org/topcoat)
+- [csskit](http://npmjs.org/csskit)
 
 ---
 
